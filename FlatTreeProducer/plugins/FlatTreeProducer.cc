@@ -184,7 +184,7 @@ hltPrescale_(iConfig,consumesCollector(),*this)
    fillPUInfo_           = iConfig.getParameter<bool>("fillPUInfo");
    isData_               = iConfig.getParameter<bool>("isData");
    applyMETFilters_      = iConfig.getParameter<bool>("applyMETFilters");
-   triggerBits_          = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("HLT")));
+   triggerBits_          = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("HLT2")));
    triggerBitsPAT_       = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("PAT")));
    triggerObjects_       = consumes<pat::TriggerObjectStandAloneCollection>(iConfig.getParameter<edm::InputTag>("objects"));
    triggerPrescales_     = consumes<pat::PackedTriggerPrescales>(edm::InputTag(std::string("patTrigger")));
@@ -285,6 +285,8 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
    using namespace edm;
 
    hcount->SetBinContent(1,hcount->GetBinContent(1)+1);
+   if (((int)hcount->GetBinContent(1))%100 == 0)
+       std::cout << "CIRKOVIC[hcount]: " << hcount->GetBinContent(1) << std::endl;
 
    ftree->Init();
 
@@ -631,7 +633,7 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
 
         std::string triggerName = names.triggerName(i);
 
-        if( !foundTrigger(triggerName) ) continue;
+        //CIRKOVICif( !foundTrigger(triggerName) ) continue;
 
         ftree->trigger.push_back(i);
         ftree->trigger_name.push_back(triggerName);
@@ -957,7 +959,7 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
         const pat::Electron& elec = electronsPAT->at(ie);
 
         // Skimming electrons with pT < 5 GeV.
-        if (elec.pt() < 5) continue;
+        //CIRKOVICif (elec.pt() < 5) continue;
 
         ftree->el_pt.push_back(elec.pt());
         ftree->el_eta.push_back(elec.eta());
@@ -1214,7 +1216,7 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
         const pat::Muon& muon = muons->at(im);
 
         // Skimming muons with pT < 5 GeV.
-        if (muon.pt() < 5) continue;
+        //CIRKOVICif (muon.pt() < 5) continue;
 	
         ftree->mu_pt.push_back(muon.pt());
         ftree->mu_eta.push_back(muon.eta());
@@ -1596,7 +1598,7 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
         const pat::Tau& tau = taus->at(it);
 
         // Skimming taus with pT < 5 GeV. (should do nothing for miniAOD where pT > 18 GeV is applied)
-        if (tau.pt() < 5) continue;
+        //CIRKOVICif (tau.pt() < 5) continue;
 
         ftree->tau_pt.push_back(tau.pt());
         ftree->tau_eta.push_back(tau.eta());
@@ -1915,8 +1917,11 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
      }
    
    if( (applyMETFilters_ && passMETFilters) || !applyMETFilters_ ) // MET filters
+   {}//CIRKOVIC
+   if (true)//CIRKOVIC
      {
-	if( nElecPass+nMuonPass > 0 ) // skim
+	//CIRKOVICif( nElecPass+nMuonPass > 0 ) // skim
+	if (true)//CIRKOVIC
 	  {	     
 	     ftree->tree->Fill();
 	  }

@@ -40,8 +40,12 @@ else:
     process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2'
 
 process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
-    
-corName="Spring16_25nsV6_DATA"
+
+#corName = None
+if options.isData:
+    corName="Spring16_25nsV6_DATA"
+#else:
+#    corName="Spring16_25nsV6_MC"
 corTag="JetCorrectorParametersCollection_"+corName
 #if options.isData:
 #    corName="Fall15_25nsV2_DATA"
@@ -49,6 +53,7 @@ corTag="JetCorrectorParametersCollection_"+corName
 dBFile=corName+".db"
 
 if options.isData:
+#if True:
     process.load("CondCore.CondDB.CondDB_cfi")
     process.jec = cms.ESSource("PoolDBESSource",
                                DBParameters = cms.PSet(
