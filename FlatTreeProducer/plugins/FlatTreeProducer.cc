@@ -791,7 +791,7 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
         ftree->pv_yError = primVtx->yError();
         ftree->pv_zError = primVtx->zError();
 
-        ftree->pv_ndof = primVtx->chi2();
+        ftree->pv_chi2 = primVtx->chi2();
         ftree->pv_ndof = primVtx->ndof();
         ftree->pv_rho = primVtx->position().Rho();
         ftree->pv_isFake = primVtx->isFake();
