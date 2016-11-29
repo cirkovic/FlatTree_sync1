@@ -276,6 +276,25 @@ process.FlatTree = cms.EDAnalyzer('FlatTreeProducer',
                   genTTXCHadBHadronId           = cms.InputTag("matchGenCHadron","genCHadBHadronId")
 )
 
+# https://twiki.cern.ch/twiki/bin/view/CMS/EGMSmearer
+process.load('Configuration.StandardSequences.Services_cff')
+process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
+                calibratedPatElectrons  = cms.PSet(
+                        initialSeed = cms.untracked.uint32(81),
+                engineName = cms.untracked.string('TRandom3'),
+        ),
+
+        calibratedPatPhotons  = cms.PSet(
+                initialSeed = cms.untracked.uint32(81),
+                engineName = cms.untracked.string('TRandom3'),
+        ),
+)
+
+process.load('EgammaAnalysis.ElectronTools.calibratedElectronsRun2_cfi')
+#and/or
+process.load('EgammaAnalysis.ElectronTools.calibratedPhotonsRun2_cfi')
+
+
 ##########
 #  Path  #
 ##########
@@ -287,5 +306,7 @@ process.p = cms.Path(
                     process.METSignificance+
                     process.BadChargedCandidateFilter+
                     process.BadPFMuonFilter+
-                    process.FlatTree
+                    process.FlatTree+
+                    process.calibratedPatElectrons+
+                    process.calibratedPatPhotons
                     )
