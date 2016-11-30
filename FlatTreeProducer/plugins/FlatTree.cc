@@ -108,6 +108,7 @@ void FlatTree::Init()
    met_shiftedSumEt_NoShift = DEFVAL;
    met_shiftedSumEt_PhotonEnUp = DEFVAL;
    met_shiftedSumEt_PhotonEnDown = DEFVAL;
+   met_passMETFilters = DEFVAL;
 
    metNoHF_pt     = DEFVAL;
    metNoHF_phi    = DEFVAL;
@@ -953,6 +954,7 @@ void FlatTree::CreateBranches(int buffersize = 32000)
    if( doWrite("met_shiftedSumEt_NoShift") ) tree->Branch("met_shiftedSumEt_NoShift", &met_shiftedSumEt_NoShift, "met_shiftedSumEt_NoShift/F", buffersize);
    if( doWrite("met_shiftedSumEt_PhotonEnUp") ) tree->Branch("met_shiftedSumEt_PhotonEnUp", &met_shiftedSumEt_PhotonEnUp, "met_shiftedSumEt_PhotonEnUp/F", buffersize);
    if( doWrite("met_shiftedSumEt_PhotonEnDown") ) tree->Branch("met_shiftedSumEt_PhotonEnDown", &met_shiftedSumEt_PhotonEnDown, "met_shiftedSumEt_PhotonEnDown/F", buffersize);
+   if( doWrite("met_passMETFilters") ) tree->Branch("met_passMETFilters", &met_passMETFilters, "met_passMETFilters/I", buffersize);
 
    if( doWrite("metNoHF_pt") )     tree->Branch("metNoHF_pt",    &metNoHF_pt,    "metNoHF_pt/F",    buffersize);
    if( doWrite("metNoHF_phi") )    tree->Branch("metNoHF_phi",   &metNoHF_phi,   "metNoHF_phi/F",   buffersize);

@@ -184,7 +184,7 @@ hltPrescale_(iConfig,consumesCollector(),*this)
    fillPUInfo_           = iConfig.getParameter<bool>("fillPUInfo");
    isData_               = iConfig.getParameter<bool>("isData");
    applyMETFilters_      = iConfig.getParameter<bool>("applyMETFilters");
-   triggerBits_          = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("HLT")));
+   triggerBits_          = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("HLT2")));
    triggerBitsPAT_       = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("PAT")));
    triggerObjects_       = consumes<pat::TriggerObjectStandAloneCollection>(iConfig.getParameter<edm::InputTag>("objects"));
    triggerPrescales_     = consumes<pat::PackedTriggerPrescales>(edm::InputTag(std::string("patTrigger")));

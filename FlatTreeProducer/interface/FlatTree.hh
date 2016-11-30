@@ -146,6 +146,7 @@ class FlatTree
    double met_cov10;
    double met_cov01;
    double met_cov11;
+   int    met_passMETFilters;
 
    float mc_weight;
    int   mc_id;

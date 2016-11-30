@@ -8,7 +8,8 @@ from FWCore.ParameterSet.VarParsing import VarParsing
 import os, sys
 
 options = VarParsing('analysis')
-options.register('isData',False,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Run on real data')
+#options.register('isData',False,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Run on real data')
+options.register('isData',True,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Run on real data')
 #options.register('applyMETFilters',True,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Apply MET filters')
 options.register('applyMETFilters',False,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Apply MET filters')
 options.register('applyJEC',False,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Apply JEC corrections')
@@ -233,11 +234,15 @@ process.FlatTree = cms.EDAnalyzer('FlatTreeProducer',
                   BadChargedCandidateFilter  = cms.InputTag("BadChargedCandidateFilter",""),
                   
                   filterTriggerNames       = cms.untracked.vstring(
-#                  "*"
-                  "HLT_Ele35_WPLoose_Gsf_v*",
-                  "HLT_Ele27_WPTight_Gsf_v*",
-                  "HLT_IsoMu22_v*",
-                  "HLT_IsoTkMu22_v*"
+                  "*"
+#                  "HLT_Ele35_WPLoose_Gsf_v*",
+#                  "HLT_Ele27_WPTight_Gsf_v*",
+#                  "HLT_IsoMu22_v*",
+#                  "HLT_IsoTkMu22_v*"
+
+#                  "HLT_IsoMu24_v*",
+#                  "HLT_IsoTkMu24_v*",
+#                  "HLT_Ele32_eta2p1_WPTight_Gsf_v*",
                   ),
                   
                   muonInput                = cms.InputTag("slimmedMuons"),
