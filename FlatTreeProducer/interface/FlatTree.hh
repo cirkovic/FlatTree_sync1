@@ -868,6 +868,16 @@ class FlatTree
    std::vector<int> jet_genParton_status;
    std::vector<int> jet_genParton_id;
 
+   std::vector<float> jet_r_AK4PF_pt;
+   std::vector<float> jet_r_AK4PFchs_pt;
+   std::vector<float> jet_r_AK8PF_pt;
+   std::vector<float> jet_r_AK8PFchs_pt;
+
+   std::vector<float> jet_r_AK4PF_phi;
+   std::vector<float> jet_r_AK4PFchs_phi;
+   std::vector<float> jet_r_AK8PF_phi;
+   std::vector<float> jet_r_AK8PFchs_phi;
+
    // GenJets
    //
    int genJet_n;

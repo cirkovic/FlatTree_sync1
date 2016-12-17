@@ -722,6 +722,14 @@
     <var name="jet_genParton_E" save="1" mc="1"></var>
     <var name="jet_genParton_status" save="1" mc="1"></var>
     <var name="jet_genParton_id" save="1" mc="1"></var>
+    <var name="jet_r_AK4PF_pt" save="1" mc="1"></var>
+    <var name="jet_r_AK8PF_pt" save="1" mc="1"></var>
+    <var name="jet_r_AK4PFchs_pt" save="1" mc="1"></var>
+    <var name="jet_r_AK8PFchs_pt" save="1" mc="1"></var>
+    <var name="jet_r_AK4PF_phi" save="1" mc="1"></var>
+    <var name="jet_r_AK8PF_phi" save="1" mc="1"></var>
+    <var name="jet_r_AK4PFchs_phi" save="1" mc="1"></var>
+    <var name="jet_r_AK8PFchs_phi" save="1" mc="1"></var>
     <var name="genJet_n" save="1" mc="1"></var>
     <var name="genJet_pt" save="1" mc="1"></var>
     <var name="genJet_eta" save="1" mc="1"></var>

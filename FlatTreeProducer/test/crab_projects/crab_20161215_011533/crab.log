@@ -1,0 +1,234 @@
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+ ################################################################### 
+ # WARNING: this module is deprecated.                             # 
+ # Please use CondCore.CondDB.CondDB_cfi.py                        # 
+ ################################################################### 
+DEBUG 2016-12-15 01:15:32,176: 	 Executing command: 'submit'
+DEBUG 2016-12-15 01:15:32,177: 	 Found CRAB cache file /afs/cern.ch/user/c/cirkovic/.crab3
+DEBUG 2016-12-15 01:15:32,184: 	 Checking credentials
+DEBUG 2016-12-15 01:15:32,185: 	 Found proxy file /tmp/x509up_u56359
+DEBUG 2016-12-15 01:15:32,185: 	 Getting proxy life time left
+DEBUG 2016-12-15 01:15:32,792: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u56359 -timeleft
+ output : 675039
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:33,503: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u56359 -actimeleft
+ output : 675038
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:33,504: 	 Proxy valid for 187:30:39 hours
+INFO 2016-12-15 01:15:33,504: 	 Will use CRAB configuration file crabConfig_TT_TuneCUETP8M1_13TeV-powheg-pythia8_1.py
+DEBUG 2016-12-15 01:15:33,504: 	 Loading CRAB configuration file.
+DEBUG 2016-12-15 01:15:33,508: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2016-12-15 01:15:33,629: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cirkovic/CN=707709/CN=Predrag Cirkovic
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:33,630: 	 Checking credentials
+DEBUG 2016-12-15 01:15:33,630: 	 Found proxy file /tmp/x509up_u56359
+DEBUG 2016-12-15 01:15:33,630: 	 Getting proxy life time left
+DEBUG 2016-12-15 01:15:34,236: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u56359 -timeleft
+ output : 675037
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:34,844: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u56359 -actimeleft
+ output : 675037
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:34,844: 	 Proxy valid for 187:30:37 hours
+DEBUG 2016-12-15 01:15:35,554: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u56359 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:36,152: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105).cern.ch
+DEBUG 2016-12-15 01:15:36,267: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cirkovic/CN=707709/CN=Predrag Cirkovic
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:36,267: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2016-12-15 01:15:36,267: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cirkovic/CN=707709/CN=Predrag Cirkovic_cmsweb.cern.ch for credential name
+DEBUG 2016-12-15 01:15:36,577: 	 Executing : 
+ command : myproxy-info -l f1b76ff83aaf746f06bf088e51f735670ff6d4b6 -s myproxy.cern.ch
+ output : username: f1b76ff83aaf746f06bf088e51f735670ff6d4b6
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cirkovic/CN=707709/CN=Predrag Cirkovic
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105).cern.ch
+  timeleft: 632:54:22  (26.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-12-15 01:15:36,579: 	 Myproxy is valid: 2278462
+DEBUG 2016-12-15 01:15:36,579: 	 Command use: submit
+DEBUG 2016-12-15 01:15:36,579: 	 Options use: ['-c', 'crabConfig_TT_TuneCUETP8M1_13TeV-powheg-pythia8_1.py']
+DEBUG 2016-12-15 01:15:37,033: 	 CRABClient version: 3.3.1611
+DEBUG 2016-12-15 01:15:37,033: 	 Instance is prod
+DEBUG 2016-12-15 01:15:37,033: 	 Server base url is cmsweb.cern.ch
+DEBUG 2016-12-15 01:15:37,033: 	 Command url /crabserver/prod/workflow
+DEBUG 2016-12-15 01:15:37,033: 	 Started submission
+DEBUG 2016-12-15 01:15:37,033: 	 Working on /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161215_011533
+DEBUG 2016-12-15 01:15:37,617: 	 Loading required information from the environment
+DEBUG 2016-12-15 01:15:37,618: 	 Found CMSSW_8_0_12 for slc6_amd64_gcc530 with base /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12
+DEBUG 2016-12-15 01:15:37,618: 	 Loading required information from the environment
+DEBUG 2016-12-15 01:15:37,618: 	 Found CMSSW_8_0_12 for slc6_amd64_gcc530 with base /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12
+DEBUG 2016-12-15 01:15:37,647: 	 UNIQUE NAME: tarUUID c390967f-6777-4597-b3fe-f890c11985c5 
+DEBUG 2016-12-15 01:15:37,648: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.workArea = 'crab_projects'
+config.section_('JobType')
+config.JobType.psetName = 'runFlatTreeMINIAOD_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.inputFiles = ['conf.xml', 'Spring16_25nsV6_MC.db', 'Spring16_25nsV6_DATA.db', 'Spring16_25nsV3_DATA.db', 'Spring16_25nsV10All_DATA.db', 'Spring16_25nsV10_MC.db', 'Summer15_25nsV6_MC.db', 'Summer15_25nsV6_DATA.db']
+config.JobType.outputFiles = ['output*.root']
+config.JobType.disableAutomaticOutputCollection = True
+config.section_('Data')
+config.Data.inputDataset = '/TT_TuneCUETP8M1_13TeV-powheg-pythia8/RunIISpring16MiniAODv1-PUSpring16_80X_mcRun2_asymptotic_2016_v3_ext4-v1/MINIAODSIM'
+config.Data.unitsPerJob = 1
+config.Data.splitting = 'FileBased'
+config.Data.totalUnits = 1
+config.section_('Site')
+config.Site.storageSite = 'T2_HU_Budapest'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2016-12-15 01:15:37,648: 	 self.config.JobType.psetName: runFlatTreeMINIAOD_cfg.py
+INFO 2016-12-15 01:15:37,648: 	 Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+INFO 2016-12-15 01:15:38,527: 	 Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+DEBUG 2016-12-15 01:15:38,527: 	 Writing CMSSW configuration to /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161215_011533/inputs/PSet.py
+DEBUG 2016-12-15 01:15:38,683: 	 The following EDM output files will be collected: []
+DEBUG 2016-12-15 01:15:38,684: 	 The following TFile output files will be collected: []
+DEBUG 2016-12-15 01:15:38,684: 	 The following user output files will be collected: ['output*.root']
+DEBUG 2016-12-15 01:15:38,684: 	 Loading required information from the environment
+DEBUG 2016-12-15 01:15:38,684: 	 Found CMSSW_8_0_12 for slc6_amd64_gcc530 with base /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12
+DEBUG 2016-12-15 01:15:38,684: 	 Making tarball in /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161215_011533/inputs/c390967f-6777-4597-b3fe-f890c11985c5default.tgz
+DEBUG 2016-12-15 01:15:38,736: 	 Checking directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/lib
+DEBUG 2016-12-15 01:15:38,736: 	 Adding directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/lib to tarball
+DEBUG 2016-12-15 01:15:47,314: 	 Checking directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/biglib
+DEBUG 2016-12-15 01:15:47,315: 	 Adding directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/biglib to tarball
+DEBUG 2016-12-15 01:15:51,969: 	 Checking directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/module
+DEBUG 2016-12-15 01:15:52,216: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/EgammaAnalysis/ElectronTools/data to tarball
+DEBUG 2016-12-15 01:15:52,429: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/EgammaAnalysis/ElectronTools/interface to tarball
+DEBUG 2016-12-15 01:15:52,500: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/RecoMET/METFilters/data to tarball
+DEBUG 2016-12-15 01:15:52,502: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/RecoMET/METFilters/interface to tarball
+DEBUG 2016-12-15 01:15:52,554: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/RecoEgamma/ElectronIdentification/data to tarball
+DEBUG 2016-12-15 01:15:52,569: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/RecoEgamma/ElectronIdentification/interface to tarball
+DEBUG 2016-12-15 01:15:52,660: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Alignment/CommonAlignmentProducer/data to tarball
+DEBUG 2016-12-15 01:15:52,666: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Alignment/CommonAlignmentProducer/interface to tarball
+DEBUG 2016-12-15 01:15:52,894: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/CalibTracker/SiStripCommon/data to tarball
+DEBUG 2016-12-15 01:15:52,939: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/CalibTracker/SiStripCommon/interface to tarball
+DEBUG 2016-12-15 01:15:52,998: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Calibration/TkAlCaRecoProducers/interface to tarball
+DEBUG 2016-12-15 01:15:53,059: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/CondCore/ESSources/interface to tarball
+DEBUG 2016-12-15 01:15:53,138: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/DPGAnalysis/SiStripTools/interface to tarball
+DEBUG 2016-12-15 01:15:53,362: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/DQM/SiStripMonitorClient/data to tarball
+DEBUG 2016-12-15 01:15:53,401: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/DQM/SiStripMonitorClient/interface to tarball
+DEBUG 2016-12-15 01:15:53,487: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/DQM/SiStripMonitorTrack/data to tarball
+DEBUG 2016-12-15 01:15:53,491: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/DQM/SiStripMonitorTrack/interface to tarball
+DEBUG 2016-12-15 01:15:53,511: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/DQMOffline/Alignment/interface to tarball
+DEBUG 2016-12-15 01:15:53,533: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/DQMOffline/CalibTracker/interface to tarball
+DEBUG 2016-12-15 01:15:53,587: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Fireworks/FWInterface/interface to tarball
+DEBUG 2016-12-15 01:15:53,612: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Fireworks/Geometry/data to tarball
+DEBUG 2016-12-15 01:15:53,619: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Fireworks/Geometry/interface to tarball
+DEBUG 2016-12-15 01:15:53,651: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Geometry/HGCalGeometry/interface to tarball
+DEBUG 2016-12-15 01:15:53,680: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Geometry/HcalCommonData/data to tarball
+DEBUG 2016-12-15 01:15:53,753: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Geometry/HcalCommonData/interface to tarball
+DEBUG 2016-12-15 01:15:53,797: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/PhysicsTools/PatAlgos/interface to tarball
+DEBUG 2016-12-15 01:15:54,037: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/RecoTracker/TrackProducer/interface to tarball
+DEBUG 2016-12-15 01:15:54,103: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/SLHCUpgradeSimulations/Geometry/data to tarball
+DEBUG 2016-12-15 01:15:54,131: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/SLHCUpgradeSimulations/Geometry/interface to tarball
+DEBUG 2016-12-15 01:15:54,189: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/SimG4CMS/Calo/data to tarball
+DEBUG 2016-12-15 01:15:54,226: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/SimG4CMS/Calo/interface to tarball
+DEBUG 2016-12-15 01:15:54,363: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/SimTracker/TrackHistory/interface to tarball
+DEBUG 2016-12-15 01:15:54,418: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Validation/CaloTowers/interface to tarball
+DEBUG 2016-12-15 01:15:54,503: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Validation/Performance/data to tarball
+DEBUG 2016-12-15 01:15:54,512: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Validation/Performance/interface to tarball
+DEBUG 2016-12-15 01:15:54,579: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Validation/RecoVertex/data to tarball
+DEBUG 2016-12-15 01:15:54,586: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/Validation/RecoVertex/interface to tarball
+DEBUG 2016-12-15 01:15:54,655: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/data to tarball
+DEBUG 2016-12-15 01:16:02,043: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/interface to tarball
+DEBUG 2016-12-15 01:16:02,210: 	 Adding data directory /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/JetMETCorrections/Modules/interface to tarball
+DEBUG 2016-12-15 01:16:02,260: 	 Adding file conf.xml to tarball
+DEBUG 2016-12-15 01:16:02,262: 	 Adding file Spring16_25nsV6_MC.db to tarball
+DEBUG 2016-12-15 01:16:02,282: 	 Adding file Spring16_25nsV6_DATA.db to tarball
+DEBUG 2016-12-15 01:16:02,306: 	 Adding file Spring16_25nsV3_DATA.db to tarball
+DEBUG 2016-12-15 01:16:02,330: 	 Adding file Spring16_25nsV10All_DATA.db to tarball
+DEBUG 2016-12-15 01:16:02,426: 	 Adding file Spring16_25nsV10_MC.db to tarball
+DEBUG 2016-12-15 01:16:02,449: 	 Adding file Summer15_25nsV6_MC.db to tarball
+DEBUG 2016-12-15 01:16:02,453: 	 Adding file Summer15_25nsV6_DATA.db to tarball
+DEBUG 2016-12-15 01:16:02,836: 	 Uploading archive /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161215_011533/inputs/c390967f-6777-4597-b3fe-f890c11985c5default.tgz to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2016-12-15 01:16:11,004: 	 Loading required information from the environment
+DEBUG 2016-12-15 01:16:11,004: 	 Found CMSSW_8_0_12 for slc6_amd64_gcc530 with base /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12
+DEBUG 2016-12-15 01:16:11,004: 	 Making tarball in /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161215_011533/inputs/debugFiles.tgz
+DEBUG 2016-12-15 01:16:11,007: 	 Uploading archive /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161215_011533/inputs/debugFiles.tgz to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2016-12-15 01:16:11,383: 	 Result uploading input files: 04243652a4c9ce39e06733912aa5817ac61cc872226c7f8db1b62de4cb12af10.tar.gz 
+WARNING 2016-12-15 01:16:11,383: 	 Warning: The following output files will not be published, as they are not EDM files: ['output*.root']
+INFO 2016-12-15 01:16:11,384: 	 Sending the request to the server
+DEBUG 2016-12-15 01:16:11,384: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T2_HU_Budapest', 'algoargs': 1, 'cachefilename': '04243652a4c9ce39e06733912aa5817ac61cc872226c7f8db1b62de4cb12af10.tar.gz', 'numcores': 1, 'addoutputfiles': ['output*.root'], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_8_0_12', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/TT_TuneCUETP8M1_13TeV-powheg-pythia8/RunIISpring16MiniAODv1-PUSpring16_80X_mcRun2_asymptotic_2016_v3_ext4-v1/MINIAODSIM', 'dryrun': 0, 'workflow': 'crab_20161215_011533', 'adduserfiles': ['conf.xml', 'Spring16_25nsV6_MC.db', 'Spring16_25nsV6_DATA.db', 'Spring16_25nsV3_DATA.db', 'Spring16_25nsV10All_DATA.db', 'Spring16_25nsV10_MC.db', 'Summer15_25nsV6_MC.db', 'Summer15_25nsV6_DATA.db'], 'nonprodsw': 0, 'tfileoutfiles': [], 'oneEventMode': 0, 'debugfilename': 'f8c2cd9c4b769c25777accb389b1a737e48fd65763fe8e791117dd433208b685.tar.gz', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'saveoutput': 1, 'publication': 1, 'jobarch': 'slc6_amd64_gcc530', 'totalunits': 1, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': ''} 
+DEBUG 2016-12-15 01:16:11,384: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T2_HU_Budapest&algoargs=1&cachefilename=04243652a4c9ce39e06733912aa5817ac61cc872226c7f8db1b62de4cb12af10.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_8_0_12&primarydataset=&inputdata=%2FTT_TuneCUETP8M1_13TeV-powheg-pythia8%2FRunIISpring16MiniAODv1-PUSpring16_80X_mcRun2_asymptotic_2016_v3_ext4-v1%2FMINIAODSIM&dryrun=0&workflow=crab_20161215_011533&nonprodsw=0&oneEventMode=0&debugfilename=f8c2cd9c4b769c25777accb389b1a737e48fd65763fe8e791117dd433208b685.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&saveoutput=1&publication=1&jobarch=slc6_amd64_gcc530&totalunits=1&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&adduserfiles=conf.xml&adduserfiles=Spring16_25nsV6_MC.db&adduserfiles=Spring16_25nsV6_DATA.db&adduserfiles=Spring16_25nsV3_DATA.db&adduserfiles=Spring16_25nsV10All_DATA.db&adduserfiles=Spring16_25nsV10_MC.db&adduserfiles=Summer15_25nsV6_MC.db&adduserfiles=Summer15_25nsV6_DATA.db&addoutputfiles=output%2A.root
+INFO 2016-12-15 01:16:12,185: 	 The server answered with an error.
+INFO 2016-12-15 01:16:12,185: 	 Server answered with: Invalid input parameter
+INFO 2016-12-15 01:16:12,185: 	 Reason is: Incorrect 'JobType.outputFiles' parameter. Allowed regexp: '^(?=.{0,255}$)([a-zA-Z0-9\-\._]+)$'.
+INFO 2016-12-15 01:16:12,185: 	 Error Id: 58dedf9ce5629d68f65532b8e5d51364
+DEBUG 2016-12-15 01:16:12,185: 	 ERROR: Bad Request (400):  '<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <title>400 Bad Request</title>
+    <style type="text/css">
+    #powered_by {
+        margin-top: 20px;
+        border-top: 2px solid black;
+        font-style: italic;
+    }
+
+    #traceback {
+        color: red;
+    }
+    </style>
+</head>
+    <body>
+        <h2>400 Bad Request</h2>
+        <p>Invalid input parameter</p>
+        <pre id="traceback"></pre>
+    <div id="powered_by">
+      <span>
+        Powered by <a href="http://www.cherrypy.org">CherryPy unknown</a>
+      </span>
+    </div>
+    </body>
+</html>
+'
+DEBUG 2016-12-15 01:16:12,186: 	 Command failed with URI: https://cmsweb.cern.ch/crabserver/prod/workflow
+DEBUG 2016-12-15 01:16:12,186: 	      Input data: maxjobruntime=1250&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T2_HU_Budapest&algoargs=1&cachefilename=04243652a4c9ce39e06733912aa5817ac61cc872226c7f8db1b62de4cb12af10.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_8_0_12&primarydataset=&inputdata=%2FTT_TuneCUETP8M1_13TeV-powheg-pythia8%2FRunIISpring16MiniAODv1-PUSpring16_80X_mcRun2_asymptotic_2016_v3_ext4-v1%2FMINIAODSIM&dryrun=0&workflow=crab_20161215_011533&nonprodsw=0&oneEventMode=0&debugfilename=f8c2cd9c4b769c25777accb389b1a737e48fd65763fe8e791117dd433208b685.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&saveoutput=1&publication=1&jobarch=slc6_amd64_gcc530&totalunits=1&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&adduserfiles=conf.xml&adduserfiles=Spring16_25nsV6_MC.db&adduserfiles=Spring16_25nsV6_DATA.db&adduserfiles=Spring16_25nsV3_DATA.db&adduserfiles=Spring16_25nsV10All_DATA.db&adduserfiles=Spring16_25nsV10_MC.db&adduserfiles=Summer15_25nsV6_MC.db&adduserfiles=Summer15_25nsV6_DATA.db&addoutputfiles=output%2A.root
+DEBUG 2016-12-15 01:16:12,186: 	      Request headers: {'Content-Length': '734', 'X-Error-Http': '400', 'X-Rest-Time': '280128.956 us', 'Server': 'CherryPy/unknown', 'Connection': 'close', 'X-Error-Detail': 'Invalid input parameter', 'CMS-Server-Time': 'D=313311 t=1481760971868917', 'X-Rest-Status': '302', 'Date': 'Thu, 15 Dec 2016 00:16:11 GMT', 'Content-Type': 'text/html;charset=utf-8', 'X-Error-Info': "Incorrect 'JobType.outputFiles' parameter. Allowed regexp: '^(?=.{0,255}$)([a-zA-Z0-9\\-\\._]+)$'.", 'X-Error-Id': '58dedf9ce5629d68f65532b8e5d51364'}
+ERROR 2016-12-15 01:16:12,186: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1611-comp3/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1611-comp3/bin/crab", line 148, in __call__
+    self.cmd()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1611-comp3/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 124, in __call__
+    dictresult, status, reason = server.put(self.uri, data = self.configreq_encoded)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1611-comp3/lib/python2.7/site-packages/RESTInteractions.py", line 91, in put
+    return self.makeRequest(uri = uri, data = data, verb = 'PUT')
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1611-comp3/lib/python2.7/site-packages/RESTInteractions.py", line 128, in makeRequest
+    capath=caCertPath)#, verbose=True)# for debug
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1611-comp3/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/crabserver/prod/workflow, code=400, reason=Bad Request, headers={'Content-Length': '734', 'X-Error-Http': '400', 'X-Rest-Time': '280128.956 us', 'Server': 'CherryPy/unknown', 'Connection': 'close', 'X-Error-Detail': 'Invalid input parameter', 'CMS-Server-Time': 'D=313311 t=1481760971868917', 'X-Rest-Status': '302', 'Date': 'Thu, 15 Dec 2016 00:16:11 GMT', 'Content-Type': 'text/html;charset=utf-8', 'X-Error-Info': "Incorrect 'JobType.outputFiles' parameter. Allowed regexp: '^(?=.{0,255}$)([a-zA-Z0-9\\-\\._]+)$'.", 'X-Error-Id': '58dedf9ce5629d68f65532b8e5d51364'}
+INFO 2016-12-15 01:16:12,250: 	 Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161215_011533/crab.log

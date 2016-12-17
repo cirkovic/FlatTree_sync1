@@ -1,0 +1,153 @@
+Will use CRAB configuration file crabConfig_ST_TH_1L3B_Hut.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_112304:cirkovic_crab_20161213_122120
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122120/crab.log
+Will use CRAB configuration file crabConfig_ST_TH_1L3B_Hct.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_112412:cirkovic_crab_20161213_122313
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122313/crab.log
+Will use CRAB configuration file crabConfig_TT_TopLeptonicDecay_TH_1L3B_Eta_Hut.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_112518:cirkovic_crab_20161213_122425
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122425/crab.log
+Will use CRAB configuration file crabConfig_TT_TopLeptonicDecay_TH_1L3B_Eta_Hct.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_112632:cirkovic_crab_20161213_122539
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122539/crab.log
+Will use CRAB configuration file crabConfig_TT_AntitopLeptonicDecay_TH_1L3B_Eta_Hut.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_112740:cirkovic_crab_20161213_122648
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122648/crab.log
+Will use CRAB configuration file crabConfig_TT_AntitopLeptonicDecay_TH_1L3B_Eta_Hct.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_112837:cirkovic_crab_20161213_122750
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122750/crab.log
+Will use CRAB configuration file crabConfig_TT_TuneCUETP8M1_13TeV-powheg-pythia8.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_112940:cirkovic_crab_20161213_122853
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122853/crab.log
+Will use CRAB configuration file crabConfig_ST_s-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113034:cirkovic_crab_20161213_122952
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_122952/crab.log
+Will use CRAB configuration file crabConfig_ST_t-channel_antitop_4f_leptonDecays_13TeV-powheg-pythia8_TuneCUETP8M1.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113131:cirkovic_crab_20161213_123039
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123039/crab.log
+Will use CRAB configuration file crabConfig_ST_t-channel_top_4f_leptonDecays_13TeV-powheg-pythia8_TuneCUETP8M1.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113237:cirkovic_crab_20161213_123142
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123142/crab.log
+Will use CRAB configuration file crabConfig_ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113339:cirkovic_crab_20161213_123252
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123252/crab.log
+Will use CRAB configuration file crabConfig_ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113430:cirkovic_crab_20161213_123345
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123345/crab.log
+Will use CRAB configuration file crabConfig_WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113528:cirkovic_crab_20161213_123435
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123435/crab.log
+Will use CRAB configuration file crabConfig_ZJetsToNuNu_HT-1200To2500_13TeV-madgraph.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113628:cirkovic_crab_20161213_123536
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123536/crab.log
+Will use CRAB configuration file crabConfig_ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113729:cirkovic_crab_20161213_123637
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123637/crab.log
+Will use CRAB configuration file crabConfig_ZJetsToNuNu_HT-600To800_13TeV-madgraph.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113856:cirkovic_crab_20161213_123754
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123754/crab.log
+Will use CRAB configuration file crabConfig_ZJetsToNuNu_HT-800To1200_13TeV-madgraph.py
+Importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Finished importing CMSSW configuration runFlatTreeMINIAOD_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['output.root']
+Sending the request to the server
+Success: Your task has been delivered to the CRAB3 server.
+Task name: 161213_113953:cirkovic_crab_20161213_123904
+Please use 'crab status' to check how the submission process proceeds.
+Log file is /afs/cern.ch/work/c/cirkovic/FlatTree/CMSSW_8_0_12/src/FlatTree/FlatTreeProducer/test/crab_projects/crab_20161213_123904/crab.log

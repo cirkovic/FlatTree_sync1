@@ -54,6 +54,8 @@
 #include "CondFormats/JetMETObjects/interface/JetCorrectionUncertainty.h"
 #include "CondFormats/JetMETObjects/interface/FactorizedJetCorrector.h"
 
+#include "JetMETCorrections/Modules/interface/JetResolution.h"
+
 #include "TMVA/Tools.h"
 #include "TMVA/Reader.h"
 #include "TMVA/MethodCuts.h"
@@ -184,7 +186,10 @@ hltPrescale_(iConfig,consumesCollector(),*this)
    fillPUInfo_           = iConfig.getParameter<bool>("fillPUInfo");
    isData_               = iConfig.getParameter<bool>("isData");
    applyMETFilters_      = iConfig.getParameter<bool>("applyMETFilters");
-   triggerBits_          = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("HLT")));
+   if (isData_)
+       triggerBits_          = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("HLT")));
+   else
+       triggerBits_          = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("HLT")));
    triggerBitsPAT_       = consumes<edm::TriggerResults>(edm::InputTag(std::string("TriggerResults"),std::string(""),std::string("PAT")));
    triggerObjects_       = consumes<pat::TriggerObjectStandAloneCollection>(iConfig.getParameter<edm::InputTag>("objects"));
    triggerPrescales_     = consumes<pat::PackedTriggerPrescales>(edm::InputTag(std::string("patTrigger")));
@@ -462,6 +467,23 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
    
    edm::Handle<std::vector<int> > genTTXCHadBHadronId;
    iEvent.getByToken(genTTXCHadBHadronIdToken_,genTTXCHadBHadronId);
+
+
+   JME::JetResolution resolution_AK4PF_pt    = JME::JetResolution::get(iSetup, "AK4PF_pt");
+   JME::JetResolution resolution_AK8PF_pt    = JME::JetResolution::get(iSetup, "AK8PF_pt");
+   JME::JetResolution resolution_AK4PFchs_pt = JME::JetResolution::get(iSetup, "AK4PFchs_pt");
+   JME::JetResolution resolution_AK8PFchs_pt = JME::JetResolution::get(iSetup, "AK8PFchs_pt");
+
+   JME::JetResolution resolution_AK4PF_phi    = JME::JetResolution::get(iSetup, "AK4PF_phi");
+   JME::JetResolution resolution_AK8PF_phi    = JME::JetResolution::get(iSetup, "AK8PF_phi");
+   JME::JetResolution resolution_AK4PFchs_phi = JME::JetResolution::get(iSetup, "AK4PFchs_phi");
+   JME::JetResolution resolution_AK8PFchs_phi = JME::JetResolution::get(iSetup, "AK8PFchs_phi");
+
+   JME::JetResolutionScaleFactor resolution_sf_AK4PF     = JME::JetResolutionScaleFactor::get(iSetup, "AK4PF");
+   JME::JetResolutionScaleFactor resolution_sf_AK8PF     = JME::JetResolutionScaleFactor::get(iSetup, "AK8PF");
+   JME::JetResolutionScaleFactor resolution_sf_AK4PFchs  = JME::JetResolutionScaleFactor::get(iSetup, "AK4PFchs");
+   JME::JetResolutionScaleFactor resolution_sf_AK8PFchs  = JME::JetResolutionScaleFactor::get(iSetup, "AK8PFchs");
+
    
    ftree->ev_run = iEvent.id().run();
    ftree->ev_id = iEvent.id().event();
@@ -1888,6 +1910,37 @@ void FlatTreeProducer::analyze(const edm::Event& iEvent, const edm::EventSetup& 
 
         ftree->jet_genParton_status.push_back(gen_parton_status);
         ftree->jet_genParton_id.push_back(gen_parton_id);
+
+
+        JME::JetParameters parameters_AK4PF_pt;
+        JME::JetParameters parameters_AK8PF_pt;
+        JME::JetParameters parameters_AK4PFchs_pt;
+        JME::JetParameters parameters_AK8PFchs_pt;
+
+        JME::JetParameters parameters_AK4PF_phi;
+        JME::JetParameters parameters_AK8PF_phi;
+        JME::JetParameters parameters_AK4PFchs_phi;
+        JME::JetParameters parameters_AK8PFchs_phi;
+
+        parameters_AK4PF_pt.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+        parameters_AK8PF_pt.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+        parameters_AK4PFchs_pt.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+        parameters_AK8PFchs_pt.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+
+        parameters_AK4PF_phi.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+        parameters_AK8PF_phi.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+        parameters_AK4PFchs_phi.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+        parameters_AK8PFchs_phi.setJetPt(jet.pt()).setJetEta(jet.eta()).setRho(ftree->ev_rho);
+
+        ftree->jet_r_AK4PF_pt.push_back(resolution_AK4PF_pt.getResolution(parameters_AK4PF_pt));
+        ftree->jet_r_AK8PF_pt.push_back(resolution_AK8PF_pt.getResolution(parameters_AK8PF_pt));
+        ftree->jet_r_AK4PFchs_pt.push_back(resolution_AK4PFchs_pt.getResolution(parameters_AK4PFchs_pt));
+        ftree->jet_r_AK8PFchs_pt.push_back(resolution_AK8PFchs_pt.getResolution(parameters_AK8PFchs_pt));
+
+        ftree->jet_r_AK4PF_phi.push_back(resolution_AK4PF_phi.getResolution(parameters_AK4PF_phi));
+        ftree->jet_r_AK8PF_phi.push_back(resolution_AK8PF_phi.getResolution(parameters_AK8PF_phi));
+        ftree->jet_r_AK4PFchs_phi.push_back(resolution_AK4PFchs_phi.getResolution(parameters_AK4PFchs_phi));
+        ftree->jet_r_AK8PFchs_phi.push_back(resolution_AK8PFchs_phi.getResolution(parameters_AK8PFchs_phi));
      }
 
    // GenJets

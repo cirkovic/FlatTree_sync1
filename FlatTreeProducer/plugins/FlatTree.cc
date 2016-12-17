@@ -834,6 +834,16 @@ void FlatTree::Init()
    jet_genParton_status.clear();
    jet_genParton_id.clear();
 
+   jet_r_AK4PF_pt.clear();
+   jet_r_AK4PFchs_pt.clear();
+   jet_r_AK8PF_pt.clear();
+   jet_r_AK8PFchs_pt.clear();
+
+   jet_r_AK4PF_phi.clear();
+   jet_r_AK4PFchs_phi.clear();
+   jet_r_AK8PF_phi.clear();
+   jet_r_AK8PFchs_phi.clear();
+
    //------------------------
    //  GenJet collection
    //------------------------
@@ -1673,6 +1683,16 @@ void FlatTree::CreateBranches(int buffersize = 32000)
    if( doWrite("jet_genParton_E") ) tree->Branch("jet_genParton_E", "std::vector<float>", &jet_genParton_E, buffersize);
    if( doWrite("jet_genParton_status") ) tree->Branch("jet_genParton_status", "std::vector<int>", &jet_genParton_status, buffersize);
    if( doWrite("jet_genParton_id") ) tree->Branch("jet_genParton_id", "std::vector<int>", &jet_genParton_id, buffersize);
+
+   if( doWrite("jet_r_AK4PF_pt") ) tree->Branch("jet_r_AK4PF_pt", "std::vector<float>", &jet_r_AK4PF_pt, buffersize);
+   if( doWrite("jet_r_AK4PFchs_pt") ) tree->Branch("jet_r_AK4PchsF_pt", "std::vector<float>", &jet_r_AK4PFchs_pt, buffersize);
+   if( doWrite("jet_r_AK8PF_pt") ) tree->Branch("jet_r_AK8PF_pt", "std::vector<float>", &jet_r_AK8PF_pt, buffersize);
+   if( doWrite("jet_r_AK8PFchs_pt") ) tree->Branch("jet_r_AK8PFchs_pt", "std::vector<float>", &jet_r_AK8PFchs_pt, buffersize);
+
+   if( doWrite("jet_r_AK4PF_phi") ) tree->Branch("jet_r_AK4PF_phi", "std::vector<float>", &jet_r_AK4PF_phi, buffersize);
+   if( doWrite("jet_r_AK4PFchs_phi") ) tree->Branch("jet_r_AK4PchsF_phi", "std::vector<float>", &jet_r_AK4PFchs_phi, buffersize);
+   if( doWrite("jet_r_AK8PF_phi") ) tree->Branch("jet_r_AK8PF_phi", "std::vector<float>", &jet_r_AK8PF_phi, buffersize);
+   if( doWrite("jet_r_AK8PFchs_phi") ) tree->Branch("jet_r_AK8PFchs_phi", "std::vector<float>", &jet_r_AK8PFchs_phi, buffersize);
 
    //------------------------
    //  genJet collection

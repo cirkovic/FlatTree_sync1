@@ -11,7 +11,7 @@ options = VarParsing('analysis')
 options.register('isData',False,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Run on real data')
 #options.register('applyMETFilters',True,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Apply MET filters')
 options.register('applyMETFilters',False,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Apply MET filters')
-options.register('applyJEC',False,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Apply JEC corrections')
+options.register('applyJEC',True,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Apply JEC corrections')
 options.register('fillMCScaleWeight',True,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Fill PDF weights')
 options.register('fillPUInfo',True,VarParsing.multiplicity.singleton,VarParsing.varType.bool,'Fill PU info')
 options.register('nPDF', -1, VarParsing.multiplicity.singleton, VarParsing.varType.int, "nPDF")
@@ -42,14 +42,14 @@ else:
 
 process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
     
-corName="Spring16_25nsV6_DATA"
+corName="Spring16_25nsV10_MC"
 corTag="JetCorrectorParametersCollection_"+corName
-#if options.isData:
-#    corName="Fall15_25nsV2_DATA"
-#    corTag="JetCorrectorParametersCollection_"+corName
+if options.isData:
+    corName="Spring16_25nsV6_DATA"
+    corTag="JetCorrectorParametersCollection_"+corName
 dBFile=corName+".db"
 
-if options.isData:
+if options.applyJEC:
     process.load("CondCore.CondDB.CondDB_cfi")
     process.jec = cms.ESSource("PoolDBESSource",
                                DBParameters = cms.PSet(
@@ -178,6 +178,7 @@ process.source = cms.Source("PoolSource",
 #              '/store/mc/RunIISpring16MiniAODv1/ttHToNonbb_M125_13TeV_powheg_pythia8/MINIAODSIM/PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3-v1/50000/0ADF7BAE-0914-E611-B788-0025905A6068.root'
 #              '/store/data/Run2016B/SingleElectron/MINIAOD/PromptReco-v2/000/273/158/00000/26868D6F-4A1A-E611-8916-02163E011D33.root'
               '/store/mc/RunIISpring16MiniAODv2/TT_TuneCUETP8M1_13TeV-powheg-pythia8/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14_ext3-v1/00000/0064B539-803A-E611-BDEA-002590D0B060.root'
+#              '/store/data/Run2016B/SingleElectron/MINIAOD/23Sep2016-v3/00000/00099863-E799-E611-A876-141877343E6D.root'
         )
 )
 
@@ -233,11 +234,11 @@ process.FlatTree = cms.EDAnalyzer('FlatTreeProducer',
                   BadChargedCandidateFilter  = cms.InputTag("BadChargedCandidateFilter",""),
                   
                   filterTriggerNames       = cms.untracked.vstring(
-#                  "*"
-                  "HLT_Ele35_WPLoose_Gsf_v*",
-                  "HLT_Ele27_WPTight_Gsf_v*",
-                  "HLT_IsoMu22_v*",
-                  "HLT_IsoTkMu22_v*"
+                  "*"
+#                  "HLT_Ele35_WPLoose_Gsf_v*",
+#                  "HLT_Ele27_WPTight_Gsf_v*",
+#                  "HLT_IsoMu22_v*",
+#                  "HLT_IsoTkMu22_v*"
                   ),
                   
                   muonInput                = cms.InputTag("slimmedMuons"),
@@ -295,6 +296,155 @@ process.load('EgammaAnalysis.ElectronTools.calibratedElectronsRun2_cfi')
 #and/or
 process.load('EgammaAnalysis.ElectronTools.calibratedPhotonsRun2_cfi')
 
+process.load('Configuration.StandardSequences.Services_cff')
+process.load("JetMETCorrections.Modules.JetResolutionESProducer_cfi")
+from CondCore.DBCommon.CondDBSetup_cfi import *
+
+#process.jer = cms.ESSource("PoolDBESSource",
+#        CondDBSetup,
+#        toGet = cms.VPSet(
+#            # Resolution
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PtResolution_AK4PF'),
+#                label  = cms.untracked.string('AK4PF_pt')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PtResolution_AK4PFchs'),
+#                label  = cms.untracked.string('AK4PFchs_pt')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PtResolution_AK8PF'),
+#                label  = cms.untracked.string('AK8PF_pt')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PtResolution_AK8PFchs'),
+#                label  = cms.untracked.string('AK8PFchs_pt')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PhiResolution_AK4PF'),
+#                label  = cms.untracked.string('AK4PF_phi')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PhiResolution_AK4PFchs'),
+#                label  = cms.untracked.string('AK4PFchs_phi')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PhiResolution_AK8PF'),
+#                label  = cms.untracked.string('AK8PF_phi')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_PhiResolution_AK8PFchs'),
+#                label  = cms.untracked.string('AK8PFchs_phi')
+#                ),
+#
+#            # Scale factors
+#            cms.PSet(
+#                record = cms.string('JetResolutionScaleFactorRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_AK4PF'),
+#                label  = cms.untracked.string('AK4PF')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionScaleFactorRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_AK4PFchs'),
+#                label  = cms.untracked.string('AK4PFchs')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionScaleFactorRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_AK8PF'),
+#                label  = cms.untracked.string('AK8PF')
+#                ),
+#            cms.PSet(
+#                record = cms.string('JetResolutionScaleFactorRcd'),
+#                tag    = cms.string('JetCorrectorParametersCollection_Spring16_25nsV6_MC_AK8PFchs'),
+#                label  = cms.untracked.string('AK8PFchs')
+#                ),
+#
+#            ),
+#        connect = cms.string('sqlite:Spring16_25nsV6_MC.db')
+#        )
+
+
+process.jer = cms.ESSource("PoolDBESSource",
+        CondDBSetup,
+        toGet = cms.VPSet(
+            # Resolution
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PtResolution_AK4PF'),
+                label  = cms.untracked.string('AK4PF_pt')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PtResolution_AK4PFchs'),
+                label  = cms.untracked.string('AK4PFchs_pt')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PtResolution_AK8PF'),
+                label  = cms.untracked.string('AK8PF_pt')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PtResolution_AK8PFchs'),
+                label  = cms.untracked.string('AK8PFchs_pt')
+                ),
+
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PhiResolution_AK4PF'),
+                label  = cms.untracked.string('AK4PF_phi')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PhiResolution_AK4PFchs'),
+                label  = cms.untracked.string('AK4PFchs_phi')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PhiResolution_AK8PF'),
+                label  = cms.untracked.string('AK8PF_phi')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_PhiResolution_AK8PFchs'),
+                label  = cms.untracked.string('AK8PFchs_phi')
+                ),
+
+            # Scale factors
+            cms.PSet(
+                record = cms.string('JetResolutionScaleFactorRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_SF_AK4PF'),
+                label  = cms.untracked.string('AK4PF')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionScaleFactorRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_SF_AK4PFchs'),
+                label  = cms.untracked.string('AK4PFchs')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionScaleFactorRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_SF_AK8PF'),
+                label  = cms.untracked.string('AK8PF')
+                ),
+            cms.PSet(
+                record = cms.string('JetResolutionScaleFactorRcd'),
+                tag    = cms.string('JR_Summer15_25nsV6_MC_SF_AK8PFchs'),
+                label  = cms.untracked.string('AK8PFchs')
+                ),
+
+            ),
+        connect = cms.string('sqlite:Summer15_25nsV6_MC.db')
+        )
+
+process.es_prefer_jer = cms.ESPrefer('PoolDBESSource', 'jer')
 
 ##########
 #  Path  #
